@@ -147,10 +147,10 @@ type KeycloakOptions struct {
 
 type NuxeoOptions struct {
 	// Group enables to restrict login to members of indicated group
-	Groups []string `json:"groups,omitempty"`
+	// Groups []string `json:"groups,omitempty"`
 
 	// Role enables to restrict login to users with role (only available when using the keycloak-oidc provider)
-	Roles []string `json:"roles,omitempty"`
+	// Roles []string `json:"roles,omitempty"`
 }
 
 type AzureOptions struct {
