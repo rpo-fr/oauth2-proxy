@@ -55,6 +55,8 @@ func NewProvider(providerConfig options.Provider) (Provider, error) {
 		return NewGoogleProvider(providerData, providerConfig.GoogleConfig)
 	case options.KeycloakProvider:
 		return NewKeycloakProvider(providerData, providerConfig.KeycloakConfig), nil
+	case options.NuxeoProvider:
+		return NewNuxeoProvider(providerData, providerConfig.NuxeoConfig), nil
 	case options.KeycloakOIDCProvider:
 		return NewKeycloakOIDCProvider(providerData, providerConfig), nil
 	case options.LinkedInProvider:

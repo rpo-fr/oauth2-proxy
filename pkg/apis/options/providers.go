@@ -28,6 +28,8 @@ type Provider struct {
 
 	// KeycloakConfig holds all configurations for Keycloak provider.
 	KeycloakConfig KeycloakOptions `json:"keycloakConfig,omitempty"`
+	// NuxeoConfig holds all configurations for Nuxeo provider.
+	NuxeoConfig NuxeoOptions `json:"nuxeoConfig,omitempty"`
 	// AzureConfig holds all configurations for Azure provider.
 	AzureConfig AzureOptions `json:"azureConfig,omitempty"`
 	// ADFSConfig holds all configurations for ADFS provider.
@@ -116,6 +118,9 @@ const (
 	// KeycloakProvider is the provider type for Keycloak
 	KeycloakProvider ProviderType = "keycloak"
 
+	// NuxeoProvider is the provider type for Nuxeo
+	NuxeoProvider ProviderType = "nuxeo"
+
 	// KeycloakOIDCProvider is the provider type for Keycloak OIDC
 	KeycloakOIDCProvider ProviderType = "keycloak-oidc"
 
@@ -133,6 +138,14 @@ const (
 )
 
 type KeycloakOptions struct {
+	// Group enables to restrict login to members of indicated group
+	Groups []string `json:"groups,omitempty"`
+
+	// Role enables to restrict login to users with role (only available when using the keycloak-oidc provider)
+	Roles []string `json:"roles,omitempty"`
+}
+
+type NuxeoOptions struct {
 	// Group enables to restrict login to members of indicated group
 	Groups []string `json:"groups,omitempty"`
 
