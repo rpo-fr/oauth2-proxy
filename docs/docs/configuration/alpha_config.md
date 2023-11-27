@@ -371,6 +371,13 @@ character.
 | `default` | _[]string_ |  _(Optional)_ Default specifies a default value or values that will be<br/>passed to the IdP if not overridden. |
 | `allow` | _[[]URLParameterRule](#urlparameterrule)_ |  _(Optional)_ Allow specifies rules about how the default (if any) may be<br/>overridden via the query string to `/oauth2/start`.  Only<br/>values that match one or more of the allow rules will be<br/>forwarded to the IdP. |
 
+### NuxeoOptions
+
+(**Appears on:** [Provider](#provider))
+
+
+
+
 ### OIDCOptions
 
 (**Appears on:** [Provider](#provider))
@@ -403,6 +410,7 @@ Provider holds all configuration for a single provider
 | `clientSecret` | _string_ | ClientSecret is the OAuth Client Secret that is defined in the provider<br/>This value is required for all providers. |
 | `clientSecretFile` | _string_ | ClientSecretFile is the name of the file<br/>containing the OAuth Client Secret, it will be used if ClientSecret is not set. |
 | `keycloakConfig` | _[KeycloakOptions](#keycloakoptions)_ | KeycloakConfig holds all configurations for Keycloak provider. |
+| `nuxeoConfig` | _[NuxeoOptions](#nuxeooptions)_ | NuxeoConfig holds all configurations for Nuxeo provider. |
 | `azureConfig` | _[AzureOptions](#azureoptions)_ | AzureConfig holds all configurations for Azure provider. |
 | `ADFSConfig` | _[ADFSOptions](#adfsoptions)_ | ADFSConfig holds all configurations for ADFS provider. |
 | `bitbucketConfig` | _[BitbucketOptions](#bitbucketoptions)_ | BitbucketConfig holds all configurations for Bitbucket provider. |
