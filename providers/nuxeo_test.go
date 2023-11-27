@@ -17,7 +17,7 @@ import (
 
 const (
 	nuxeoAccessToken  = "eyJNuxeo.eyJAccess.Token"
-	nuxeoUserinfoPath = "nuxeo/api/v1/me"
+	nuxeoUserinfoPath = "/nuxeo/api/v1/me"
 )
 
 func testNuxeoProvider(backend *httptest.Server) (*NuxeoProvider, error) {
