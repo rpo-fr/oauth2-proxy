@@ -145,8 +145,8 @@ var _ = Describe("Nuxeo Provider Tests", func() {
 						panic(err)
 					}
 				},
-				expectedError:  nil,
-				expectedEmail:  "michael.bland@gsa.gov",
+				expectedError: nil,
+				expectedEmail: "michael.bland@gsa.gov",
 				// expectedGroups: []string{"test-grp1", "test-grp2"},
 			}),
 			Entry("email and single group", enrichSessionTableInput{
@@ -164,8 +164,8 @@ var _ = Describe("Nuxeo Provider Tests", func() {
 						panic(err)
 					}
 				},
-				expectedError:  nil,
-				expectedEmail:  "michael.bland@gsa.gov",
+				expectedError: nil,
+				expectedEmail: "michael.bland@gsa.gov",
 				// expectedGroups: []string{"test-grp1"},
 			}),
 			Entry("email and no groups", enrichSessionTableInput{
@@ -182,8 +182,8 @@ var _ = Describe("Nuxeo Provider Tests", func() {
 						panic(err)
 					}
 				},
-				expectedError:  nil,
-				expectedEmail:  "michael.bland@gsa.gov",
+				expectedError: nil,
+				expectedEmail: "michael.bland@gsa.gov",
 				// expectedGroups: nil,
 			}),
 			Entry("missing email", enrichSessionTableInput{
@@ -203,15 +203,15 @@ var _ = Describe("Nuxeo Provider Tests", func() {
 				},
 				expectedError: errors.New(
 					"unable to extract email from userinfo endpoint: type assertion to string failed"),
-				expectedEmail:  "",
+				expectedEmail: "",
 				// expectedGroups: []string{"test-grp1", "test-grp2"},
 			}),
 			Entry("request failure", enrichSessionTableInput{
 				backendHandler: func(w http.ResponseWriter, _ *http.Request) {
 					w.WriteHeader(500)
 				},
-				expectedError:  errors.New(`unexpected status "500": `),
-				expectedEmail:  "",
+				expectedError: errors.New(`unexpected status "500": `),
+				expectedEmail: "",
 				// expectedGroups: nil,
 			}),
 		)
